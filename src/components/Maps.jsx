@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import { useState, useCallback } from 'react'
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api'
+import { GoogleMap, OverlayView, useJsApiLoader } from '@react-google-maps/api'
 import { Marker } from '@react-google-maps/api'
 // import { Icon } from '@mdi/react'
 import { Icon } from '@iconify/react'
@@ -14,14 +14,18 @@ const containerStyle = {
 
 const center = {
     lat: 30.0518522,
-    lng: 31.3323257
+    lng: 31.3323257,
 }
 
-const LocationPin = ({text}) => (
-    <div className='pin'>
-        <Icon icon={Marker} className='pin-icon' />
-        <p className='pin-text'>{text}</p>
-    </div>
+const Label = ({text}) => (
+    <OverlayView
+        position={center}
+        mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
+    >
+        <div className='bg-red-800 p-5'>
+            {text}
+        </div>
+    </OverlayView>
 )
 
 const Maps = () => {
@@ -49,19 +53,17 @@ const Maps = () => {
             <h2 className='map-h2'>visit our biskuit store</h2>    
             <div className='google-map'>
                 <GoogleMap
+                    bootstrapURLKeys=''
                     mapContainerStyle={containerStyle}
                     center={center}
-                    zoom={17}
+                    zoom={16}
                     onLoad={onLoad}
                     onUnmount={onUnmount}
                     >
-                    <LocationPin 
-                        lat={location.lat}
-                        lng={location.lng}
-                        text={location.address}
-                        // lat= {30.0518522}
-                        // lng= {31.3323257}
-                    />
+
+                    <Marker 
+                        position={center}/>
+                        text={'17 Henin Ibn Ishaq, Al-Hay As-Sabea, Nasr City, Cairo'}
                 </GoogleMap>
             </div>
         </div>
