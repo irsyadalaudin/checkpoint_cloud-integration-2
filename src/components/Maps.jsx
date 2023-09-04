@@ -11,8 +11,8 @@ const containerStyle = {
 }
 
 const center = {
-    lat: 30.0518522,
-    lng: 31.3323257,
+    lat: 30.051871144791683,
+    lng: 31.332972218274286,
 }
 
 const Label = () => (
@@ -35,8 +35,6 @@ const Maps = () => {
     const [map, setMap] = useState(null)
 
     const onLoad = useCallback((map) => {
-        const bounds = new window.google.maps.LatLngBounds(center)
-        map.fitBounds(bounds)
         setMap(map)
     }, [])
 
@@ -48,15 +46,15 @@ const Maps = () => {
         <div className='px-20'>
             <p>We're located at , 17 Henin Ibn Ishaq, Al-Hay As-Sabea, Nasr City, Cairo</p>
             <p>For pickup or for a quick and easy delivery, Call us at +20 155 497 4856 </p>
-            <h2 className='map-h2'>visit our biskuit store</h2>    
-            <div className='google-map'>
+            <h1 className='pt-5 text-center'>visit our biskuit store</h1>    
+            <div className='mb-10'>
                 <GoogleMap
                     mapContainerStyle={containerStyle}
                     center={center}
                     zoom={16}
                     onLoad={onLoad}
                     onUnmount={onUnmount}
-                    >
+                >
 
                     <Marker position={center} />
                     <Label />
