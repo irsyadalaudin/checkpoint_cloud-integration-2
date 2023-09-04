@@ -17,17 +17,17 @@ const center = {
     lng: 31.3323257,
 }
 
-const Label = ({text}) => (
+const Label = () => (
     <OverlayView
         position={center}
         mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
     >
-        <div className='bg-red-800 p-5'>
-            {text}
-        </div>
+        <p>
+            17 Henin Ibn Ishaq, Al-Hay As-Sabea, Nasr City, Cairo
+        </p>
     </OverlayView>
 )
-/** */
+/* */
 
 const Maps = () => {
     const {isLoaded} = useJsApiLoader({
@@ -54,7 +54,6 @@ const Maps = () => {
             <h2 className='map-h2'>visit our biskuit store</h2>    
             <div className='google-map'>
                 <GoogleMap
-                    bootstrapURLKeys=''
                     mapContainerStyle={containerStyle}
                     center={center}
                     zoom={16}
@@ -63,7 +62,8 @@ const Maps = () => {
                     >
 
                     <Marker position={center} />
-                    <Label text='17 Henin Ibn Ishaq, Al-Hay As-Sabea, Nasr City, Cairo'/>
+                    {/* <Label text='17 Henin Ibn Ishaq, Al-Hay As-Sabea, Nasr City, Cairo'/> */}
+                    <Label />
                 </GoogleMap>
             </div>
         </div>
