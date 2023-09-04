@@ -27,6 +27,7 @@ const Label = ({text}) => (
         </div>
     </OverlayView>
 )
+/** */
 
 const Maps = () => {
     const {isLoaded} = useJsApiLoader({
@@ -61,9 +62,8 @@ const Maps = () => {
                     onUnmount={onUnmount}
                     >
 
-                    <Marker 
-                        position={center}/>
-                        text={'17 Henin Ibn Ishaq, Al-Hay As-Sabea, Nasr City, Cairo'}
+                    <Marker position={center} />
+                    <Label text='17 Henin Ibn Ishaq, Al-Hay As-Sabea, Nasr City, Cairo'/>
                 </GoogleMap>
             </div>
         </div>
