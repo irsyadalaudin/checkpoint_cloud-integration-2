@@ -61,7 +61,7 @@ const Maps = () => {
             <h1 className='pt-5 text-center'>visit our biskuit store</h1>    
             
             {/* Render the Google Map component. */}
-            <div className='mb-10'>
+            <div className='pb-10'>
                 <GoogleMap
                     mapContainerStyle={containerStyle}
                     center={center}
