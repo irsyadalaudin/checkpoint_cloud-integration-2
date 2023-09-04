@@ -10,9 +10,9 @@ const Navbar = () => {
                 {/* Create a navigation menu using a div element */}
                 <div>
                     {/* Create navigation links with padding and href attributes */}
-                    <a className='pl-5' href='#'>Home</a>
-                    <a className='pl-5' href='#'>Biskuit</a>
-                    <a className='pl-5' href='#'>About</a>
+                    <a className='pl-5' href='#' onClick={(e) => e.preventDefault()}>Home</a>
+                    <a className='pl-5' href='#' onClick={(e) => e.preventDefault()}>Biskuit</a>
+                    <a className='pl-5' href='#' onClick={(e) => e.preventDefault()}>About</a>
                     <a className='pl-5' href='#'>Contact</a>
                 </div>
             </nav>
