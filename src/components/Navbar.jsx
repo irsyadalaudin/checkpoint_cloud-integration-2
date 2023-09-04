@@ -2,7 +2,7 @@ const Navbar = () => {
     return (
         <>
             {/* Create a navigation bar with background color, height, and sticky positioning at the top */}
-            <nav className='bg-amber-900 h-14 flex justify-between items-center px-20 sticky top-0'>
+            <nav className='bg-yellow-950 h-14 flex justify-between items-center px-20 sticky top-0'>
 
                 {/* Display a logo image with a specific height */}
                 <img className='h-12' src='https://i.postimg.cc/W4YSCwg3/cookies-logo.png' alt='cookies-logo' />
