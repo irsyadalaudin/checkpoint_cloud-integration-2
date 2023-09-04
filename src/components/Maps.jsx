@@ -4,8 +4,6 @@
 import { useState, useCallback } from 'react'
 import { GoogleMap, OverlayView, useJsApiLoader } from '@react-google-maps/api'
 import { Marker } from '@react-google-maps/api'
-// import { Icon } from '@mdi/react'
-import { Icon } from '@iconify/react'
 
 const containerStyle = {
     width: '1230px',
@@ -22,9 +20,8 @@ const Label = () => (
         position={center}
         mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
     >
-        <p>
-            17 Henin Ibn Ishaq, Al-Hay As-Sabea, Nasr City, Cairo
-        </p>
+
+        <p className='whitespace-nowrap m-0 text-lg '>17 Henin Ibn Ishaq, <br />Al-Hay As-Sabea, <br /> Nasr City, Cairo</p>
     </OverlayView>
 )
 /* */
@@ -62,7 +59,6 @@ const Maps = () => {
                     >
 
                     <Marker position={center} />
-                    {/* <Label text='17 Henin Ibn Ishaq, Al-Hay As-Sabea, Nasr City, Cairo'/> */}
                     <Label />
                 </GoogleMap>
             </div>
