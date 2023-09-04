@@ -2,7 +2,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState, useCallback } from 'react'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api'
-import { Marker } from '@react-google-maps/api'
 
 const containerStyle = {
     width: '400px',
@@ -23,9 +22,6 @@ const Maps = () => {
     const [map, setMap] = useState(null)
 
     const onLoad = useCallback((map) => {
-        // const bounds = new window.google.maps.LatLngBounds()
-        // map.fitBounds(bounds)
-        // setMap(map)
         
         const bounds = new window.google.maps.LatLngBounds(center)
         map.fitBounds(bounds)
@@ -37,18 +33,22 @@ const Maps = () => {
     }, [])
 
     return isLoaded ? (
-        <GoogleMap
-            mapContainerStyle={containerStyle}
-            center={center}
-            zoom={17}
-            onLoad={onLoad}
-            onUnmount={onUnmount}
-        >
-            {/*  */}
-        <></>
-        </GoogleMap>
+        <div className='px-20'>
+            <p>We're located at , 17 Henin Ibn Ishaq, Al-Hay As-Sabea, Nasr City, Cairo</p>
+            <p>For pickup or for a quick and easy delivery, Call us at +20 155 497 4856 </p>
+            <h2 className='map-h2'>visit our biskuit store</h2>    
+            <div className='google-map'>
+                <GoogleMap
+                    mapContainerStyle={containerStyle}
+                    center={center}
+                    zoom={17}
+                    onLoad={onLoad}
+                    onUnmount={onUnmount}
+                    >
+                </GoogleMap>
+            </div>
+        </div>
     ) : <></>
 }
-
 
 export default Maps
