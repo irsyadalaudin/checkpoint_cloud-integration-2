@@ -54,7 +54,7 @@ const Maps = () => {
         <div className='bg-yellow-800 px-20'>
 
             {/* Display location information. */}
-            <p>We're located at , 17 Henin Ibn Ishaq, Al-Hay As-Sabea, Nasr City, Cairo</p>
+            <p className='mt-0'>We're located at , 17 Henin Ibn Ishaq, Al-Hay As-Sabea, Nasr City, Cairo</p>
             <p>For pickup or for a quick and easy delivery, Call us at +20 155 497 4856 </p>
             
             {/* Display a heading for the map section. */}
