@@ -2,16 +2,26 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState, useCallback } from 'react'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api'
+import { Marker } from '@react-google-maps/api'
+// import { Icon } from '@mdi/react'
+import { Icon } from '@iconify/react'
 
 const containerStyle = {
-    width: '400px',
-    height: '400px'
+    width: '1230px',
+    height: '500px'
 }
 
 const center = {
     lat: 30.0518522,
     lng: 31.3323257
 }
+
+const LocationPin = ({text}) => (
+    <div className='pin'>
+        <Icon icon={Marker} className='pin-icon' />
+        <p className='pin-text'>{text}</p>
+    </div>
+)
 
 const Maps = () => {
     const {isLoaded} = useJsApiLoader({
@@ -22,7 +32,6 @@ const Maps = () => {
     const [map, setMap] = useState(null)
 
     const onLoad = useCallback((map) => {
-        
         const bounds = new window.google.maps.LatLngBounds(center)
         map.fitBounds(bounds)
         setMap(map)
@@ -45,6 +54,13 @@ const Maps = () => {
                     onLoad={onLoad}
                     onUnmount={onUnmount}
                     >
+                    <LocationPin 
+                        lat={location.lat}
+                        lng={location.lng}
+                        text={location.address}
+                        // lat= {30.0518522}
+                        // lng= {31.3323257}
+                    />
                 </GoogleMap>
             </div>
         </div>
