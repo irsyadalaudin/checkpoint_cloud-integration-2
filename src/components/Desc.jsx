@@ -2,7 +2,7 @@
 const Desc = () => {
     return (
         // Create a container div with padding and margin
-        <div className='bg-yellow-800 pt-10 px-20 pb-14 flex'>
+        <div className='bg-yellow-800 pt-10 px-28 pb-14 flex'>
             <div className='flex-1'>
 
                 {/* Display a heading for the description section */}

@@ -7,7 +7,7 @@ import { Marker } from '@react-google-maps/api'
 
 // Define the container style for the Google Map
 const containerStyle = {
-    width: '1230px',
+    width: '1300px',
     height: '500px'
 }
 
@@ -51,7 +51,7 @@ const Maps = () => {
 
     // Render the Google Map when it's loaded
     return isLoaded ? (
-        <div className='bg-yellow-800 px-20'>
+        <div className='bg-yellow-800 px-28'>
 
             {/* Display location information. */}
             <p className='mt-0'>We're located at , 17 Henin Ibn Ishaq, Al-Hay As-Sabea, Nasr City, Cairo</p>
